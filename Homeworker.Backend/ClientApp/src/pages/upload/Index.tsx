@@ -21,7 +21,7 @@ function UploadTextbook() {
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-slate-50 to-slate-100 p-4">
+    <div className="min-h-screen flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="text-center">
           <CardTitle className="text-2xl">Upload a Textbook</CardTitle>
@@ -34,17 +34,17 @@ function UploadTextbook() {
             <Label htmlFor="file-upload" className="text-sm font-medium">
               Choose File
             </Label>
-            <div className="flex flex-col items-center justify-center w-full">
+            <div className="flex flex-col items-center justify-center w-full bg-transparent hover:bg-black/10 transition-colors duration-150">
               <label
                 htmlFor="file-upload"
-                className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer bg-slate-50 hover:bg-slate-100 border-slate-300 hover:border-slate-400 transition-colors"
+                className="flex flex-col items-center justify-center w-full h-48 border-2 border-dashed rounded-lg cursor-pointer transition-colors"
               >
                 <div className="flex flex-col items-center justify-center pt-5 pb-6">
-                  <Upload className="w-10 h-10 mb-3 text-slate-400" />
-                  <p className="mb-2 text-sm text-slate-500">
+                  <Upload className="w-10 h-10 mb-3" />
+                  <p className="mb-2 text-sm">
                     <span className="font-semibold">Click to upload</span> or drag and drop
                   </p>
-                  <p className="text-xs text-slate-400">
+                  <p className="text-xs">
                     PDF, EPUB, or other document formats
                   </p>
                 </div>
@@ -58,7 +58,7 @@ function UploadTextbook() {
               </label>
             </div>
             {selectedFile && (
-              <p className="text-sm text-slate-600 mt-2">
+              <p className="text-sm mt-2">
                 Selected: <span className="font-medium">{selectedFile.name}</span>
               </p>
             )}
