@@ -1,19 +1,12 @@
-var bld = WebApplication.CreateBuilder(args);
+var bld = WebApplication.CreateBuilder();
 bld.Services
-   .AddAuthenticationJwtBearer(s => s.SigningKey = bld.Configuration["Auth:JwtKey"])
-   .AddAuthorization()
-   .AddFastEndpoints(o => o.SourceGeneratorDiscoveredTypes = DiscoveredTypes.All)
-   .SwaggerDocument();
+   .AddFastEndpoints()
+   .SwaggerDocument(); //define a swagger document
 
 var app = bld.Build();
-app.UseAuthentication()
-   .UseAuthorization()
-   .UseFastEndpoints(
-       c =>
-       {
-           c.Errors.UseProblemDetails();
-       })
-   .UseSwaggerGen();
+app.UseFastEndpoints()
+   .UseSwaggerGen(); //add this
 app.Run();
+
 
 public partial class Program;

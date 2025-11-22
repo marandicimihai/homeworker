@@ -16,4 +16,10 @@
         <PackageReference Include="FastEndpoints.Swagger" Version="7.1.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="ClientApp/public/" />
+      <Folder Include="ClientApp/src/assets/" />
+      <Folder Include="Endpoints/" />
+    </ItemGroup>
+
 </Project>
